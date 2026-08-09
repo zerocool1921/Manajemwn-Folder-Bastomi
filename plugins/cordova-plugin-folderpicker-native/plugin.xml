@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-folderpicker-native"
+        version="1.0.0">
+
+    <name>FolderPickerNative</name>
+    <description>
+        Plugin native buatan sendiri: membuka pemilih folder/file ASLI Android
+        (Storage Access Framework), mengonversinya ke path asli untuk dipakai
+        cordova-plugin-file, plus tombol pintas ke halaman izin "Kelola semua
+        file" dan dialog izin sistem asli untuk Android versi lama.
+    </description>
+    <license>MIT</license>
+
+    <js-module src="www/folderpickernative.js" name="FolderPickerNative">
+        <clobbers target="cordova.plugins.FolderPickerNative" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FolderPickerNative">
+                <param name="android-package" value="com.bastomi.manajemenfolder.FolderPickerNative" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/FolderPickerNative.java"
+                     target-dir="src/com/bastomi/manajemenfolder" />
+    </platform>
+</plugin>
