@@ -1,0 +1,18 @@
+{
+  "name": "manajemenfolder",
+  "displayName": "Manajemen Folder",
+  "version": "1.0.0",
+  "description": "Aplikasi Manajemen File dan Folder oleh Bastomi",
+  "main": "index.js",
+  "scripts": {
+    "build": "cordova build android"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-file": {}
+    }
+  }
+}
